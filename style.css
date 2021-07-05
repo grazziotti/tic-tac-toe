@@ -1,0 +1,93 @@
+* {
+    font-family: cursive;
+    color: #fff
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #121214;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.display {
+    text-align: center;
+    font-size: 25px;
+}
+
+.game {
+    display: grid;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    width: 400px;
+	height: 400px;
+	margin: 0 auto;
+    margin-top: 48px;
+}
+
+.game div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.game div:nth-child(2),
+.game div:nth-child(5),
+.game div:nth-child(8)  {
+    border-right: 5px solid #808080;
+    border-left: 5px solid #808080;
+}
+
+.game div:nth-child(-n+6) {
+    border-bottom: 5px solid #808080;
+}
+
+.announcer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 25px;
+}
+
+button {
+    width: 200px;
+    padding: 10px 0px;
+    margin: auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 25px;
+    background-color: #8257e5;
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #703bec
+}
+
+.playerX {
+    color: #09c372;
+}
+.playerO {
+    color: #498afb;
+}
+
+
+
+@media (max-width: 450px) {
+    .game {
+        width: 300px;
+        height: 300px;
+    }
+    .game div {
+        font-size: 50px;
+    }
+}
