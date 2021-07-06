@@ -36,17 +36,17 @@ const isTheGameOver = () => {
         [board[2], board[4], board[6]]
     ]
 
+    if (!board.includes('')) {
+        gameOver = true
+        announce('Tie')
+    }
+
     for(let i = 0; i < combinations.length; i++) {
         if (combinations[i].every( tile => tile === 'X') || combinations[i].every( tile => tile === 'O')) {
             const msg = `Player <span class="player${combinations[i][0]}">${combinations[i][0] }</span> Won`
             gameOver = true
             announce(msg)
         }
-    }
-
-    if (!board.includes('')) {
-        gameOver = true
-        announce('Tie')
     }
 }
 
